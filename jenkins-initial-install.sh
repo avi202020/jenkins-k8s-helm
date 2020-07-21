@@ -20,9 +20,9 @@ while [ $secs -gt 0 ]; do
 done
 
 # Copy the chart into the current working directory
-helm fetch stable/jenkins --version 0.13.2
+helm fetch stable/jenkins --version 2.4.1
 # Unzip the chart
-tar -xvzf jenkins-0.13.2.tgz
+tar -xvzf jenkins-2.4.1.tgz
 
 # Update the master deployment to apps/v1 to allow helm --wait to work correctly. https://github.com/kubernetes/helm/issues/3173
 sed -i '' -e 's#extensions/v1beta1#apps/v1#g' jenkins/templates/jenkins-master-deployment.yaml
